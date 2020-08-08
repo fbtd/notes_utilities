@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 
+import sys
+
 TAB_CHAR   = '\t'
 POINT_CHAR = '-'
 
 def _get_indent(line):
     line_len = len(line)
     indent = 0
-    while indent <= line_len and line[indent] == TAB_CHAR:
+    while indent <= line_len and line[indent] in (TAB_CHAR, POINT_CHAR):
         indent += 1
     return indent
 
@@ -54,7 +56,12 @@ def delist(l, result=None):
     return tuple(result)
 
 def main():
-    ...
+    l = enlist(sys.stdin)
+    deepsort(l)
+    for line in delist(l):
+        if _get_indent(line) == 0:
+            print()
+        print(line, end='')
 
 if __name__ == '__main__':
-    eixt(main())
+    exit(main())
