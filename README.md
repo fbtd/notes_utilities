@@ -4,7 +4,7 @@ sort text from stdin, writes result to stout
 
 ## format
 evernote (new web interface)
-*tabs* are used as separator
+*tabs* are used for indentation
 
 ```
 section A
@@ -19,7 +19,7 @@ section B
 ```
 
 ## options
-* -s --sections: move sections around
+* -s --sections: allows the rearrangement of sections
 
 # future
 * mix ordered list (do not sort) and unorderd lists
